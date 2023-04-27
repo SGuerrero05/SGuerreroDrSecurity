@@ -1,0 +1,66 @@
+﻿@model ML.Usuario
+@{
+    ViewBag.Title = "UsuarioGetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UsuarioGetAll</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h5>Seleccione un Usuario para editarlo. Presione + para agregar uno nuevo...</h5>
+        <hr />
+    </div>
+
+</div>
+
+@*<div class="row">*@
+<div style="float:right;">
+    @Html.ActionLink("+", "UsuarioForm", "Usuario", htmlAttributes: new { @class = "btn btn-success" })
+
+</div>
+
+<br>
+
+<table class="table table-bordered table-responsive">
+    <thead>
+        <tr>
+            <td>Editar</td>
+            <td>Nombre</td>
+            <td>Apellido Paterno</td>
+            <td>ApellidoMaterno</td>
+            <td>CURP</td>
+            <td>Telefono</td>
+            <td>Calle</td>
+            <td>NumeroInterior</td>
+            <td>NumeroExterior</td>
+            <td>Colonia</td>
+            <td>Municipio</td>
+            <td>Estado</td>
+            <td>Pais</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ML.Usuario usuario in Model.Usuarios)
+        {
+        <tr>
+            <td><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("UsuarioForm", "Usuario", new { IdUsuario = usuario.IdUsuario})"></a></td>
+            <td class="hidden">@usuario.IdUsuario</td>
+            <td>@usuario.Nombre</td>
+            <td>@usuario.ApellidoPaterno</td>
+            <td>@usuario.ApellidoMaterno</td>
+            <td>@usuario.CURP</td>
+            <td>@usuario.Telefono</td>
+            <td>@usuario.Calle</td>
+            <td>@usuario.NumeroInterior</td>
+            <td>@usuario.NumeroExterior</td>
+            <td>@usuario.Colonia.Nombre</td>
+            <td>@usuario.Colonia.Municipio.Nombre</td>
+            <td>@usuario.Colonia.Municipio.Estado.Nombre</td>
+            <td>@usuario.Colonia.Municipio.Estado.Pais.Nombre</td>
+            <td><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("UsuarioDelete", "Usuario", new { IdUsuario = usuario.IdUsuario})" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+        </tr>
+        }
+    </tbody>
+</table>

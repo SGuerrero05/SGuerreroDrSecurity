@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9528de8438aa400bb5091ebd6ed57664" Name="Diagram1">
+        <EntityTypeShape EntityType="SGuerreroDrSecurityModel.Colonia" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGuerreroDrSecurityModel.Estado" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGuerreroDrSecurityModel.Municipio" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGuerreroDrSecurityModel.Pais" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGuerreroDrSecurityModel.Usuario" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="SGuerreroDrSecurityModel.FK__Colonia__IdMunic__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="SGuerreroDrSecurityModel.FK__Usuario__IdColon__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="SGuerreroDrSecurityModel.FK__Estado__IdPais__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="SGuerreroDrSecurityModel.FK__Municipio__IdEst__15502E78" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
